@@ -59,14 +59,14 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
-
-  var i = 0;
-  setInterval(function(){
-  	socket.emit('message', {
-  		message: i
-  	});
-  	i++;
-  }, 1000);
+  //Test messages by sending a message every 1 second.
+  // var i = 0;
+  // setInterval(function(){
+  // 	socket.emit('message', {
+  // 		message: i
+  // 	});
+  // 	i++;
+  // }, 1000);
 });
 
 
