@@ -1,1 +1,17 @@
-Submit Page.
+<form>
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="customer.name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="customer.email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Avatar</label>
+    <input type="file" id="exampleInputFile" file-model="customer.file">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="Submit()">Submit</button>
+</form>
+
+{{customer}}

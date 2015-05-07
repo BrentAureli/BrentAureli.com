@@ -11,6 +11,7 @@ var session = require('express-session');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var passport = require('passport');
 var flash = require('connect-flash');
 var MongoStore = require('connect-mongo')(session);
@@ -21,7 +22,7 @@ mongoose.connect(configDB.url);
 require('./config/passport')(passport);
 
 app.use(express.static(__dirname + '/public'));
-
+app.use(multer({dest: './uploads/'}));
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
